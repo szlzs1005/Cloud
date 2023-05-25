@@ -25,3 +25,10 @@ module "write" {
 output "all_answers" {
   value = module.write.all_answers
 }
+
+//Task 4
+module "data" {
+  source = "./modules/data"
+  generated_file_path = var.path
+  depends_on = [module.read]
+}
